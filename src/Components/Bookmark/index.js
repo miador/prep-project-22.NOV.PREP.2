@@ -21,7 +21,7 @@ const Bookmark = ({ city }) => {
 		}
 	}, [city?.name]);
 
-	const handleBookmarkLocation = (e) => {
+	const handleBookmarkLocation = () => {
 		const newLocation = {
 			name: city,
 		};
@@ -48,7 +48,7 @@ const Bookmark = ({ city }) => {
 	const isLocationBookmarked = (locationName) => {
 		const bookmarkedLocations = JSON.parse(localStorage.getItem('BookmarkedLocations'));
 
-		return bookmarkedLocations?.find((location) => location.name === locationName) ? true : false;
+		return !!bookmarkedLocations?.find((location) => location.name === locationName);
 	};
 
 	const addLocationToBookmark = (location) => {

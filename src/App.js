@@ -121,55 +121,58 @@ function App() {
 		);
 	} else {
 		return (
-      <BookmarkProvider>
-			<>
-				<Navbar changeUnit={degree} setChangeUnit={setDegree} />
-				<main className="main-div">
-					<h2>Enter a city below 👇</h2>
-					<input
-						type="text"
-						value={city}
-						onChange={(e) => setCity(e.currentTarget.value)}
-						onKeyDown={() => handleKeyDown()}
-						onKeyUp={() => handleKeyUp()}
-					/>
-          <Bookmark city={city}> </Bookmark>
-
-					<section id="mapAndWeathercard">
-						<MainWeatherCard data={cWeatherData} changeUnit={degree} />
-						<MapContainer setCWeatherUrl={setCWeatherUrl} setForecastUrl={setForecastUrl} coord={cWeatherData.coord} />
-					</section>
-
-					<section>
-						<DailyForecast
-							data={forecastDataGrouped}
-							setActiveWeatherCard={setActiveWeatherCard}
-							activeWeatherCard={activeWeatherCard}
-							changeUnit={degree}
+			<BookmarkProvider>
+				<>
+					<Navbar changeUnit={degree} setChangeUnit={setDegree} />
+					<main className="main-div">
+						<h2>Enter a city below 👇</h2>
+						<input
+							type="text"
+							value={city}
+							onChange={(e) => setCity(e.currentTarget.value)}
+							onKeyDown={() => handleKeyDown()}
+							onKeyUp={() => handleKeyUp()}
 						/>
-					</section>
 
-					<section>
-						<HourlyForecast data={forecastDataGrouped[activeWeatherCard]} changeUnit={degree} />
-					</section>
+						<section id="mapAndWeathercard">
+							<MainWeatherCard data={cWeatherData} changeUnit={degree} />
+							<MapContainer
+								setCWeatherUrl={setCWeatherUrl}
+								setForecastUrl={setForecastUrl}
+								coord={cWeatherData.coord}
+							/>
+						</section>
 
-					<section>
-						<p className="required-things-heading">SUGGESTED ITEMS 🎒</p>
-						<Box itemType="things" weather={cWeatherData.weather[0].main} />
-					</section>
+						<section>
+							<DailyForecast
+								data={forecastDataGrouped}
+								setActiveWeatherCard={setActiveWeatherCard}
+								activeWeatherCard={activeWeatherCard}
+								changeUnit={degree}
+							/>
+						</section>
 
-					<section>
-						<p className="required-things-heading">SUGGESTED FOOD 😋</p>
-						<Box itemType="food" weather={cWeatherData.weather[0].main} />
-					</section>
+						<section>
+							<HourlyForecast data={forecastDataGrouped[activeWeatherCard]} changeUnit={degree} />
+						</section>
 
-					<section>
-						<p className="required-things-heading">SUGGESTED SONGS 🎶</p>
-						<PlaylistRecommendation weather={cWeatherData.weather[0].main} />
-					</section>
-				</main>
-			</>
-     	</BookmarkProvider>
+						<section>
+							<p className="required-things-heading">SUGGESTED ITEMS 🎒</p>
+							<Box itemType="things" weather={cWeatherData.weather[0].main} />
+						</section>
+
+						<section>
+							<p className="required-things-heading">SUGGESTED FOOD 😋</p>
+							<Box itemType="food" weather={cWeatherData.weather[0].main} />
+						</section>
+
+						<section>
+							<p className="required-things-heading">SUGGESTED SONGS 🎶</p>
+							<PlaylistRecommendation weather={cWeatherData.weather[0].main} />
+						</section>
+					</main>
+				</>
+			</BookmarkProvider>
 		);
 	}
 }
