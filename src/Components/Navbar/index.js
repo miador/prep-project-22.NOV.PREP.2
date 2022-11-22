@@ -13,19 +13,27 @@ const Navbar = () => {
 	};
 	const [, toggleBookmarkModal] = useBookmarkContext();
 	return (
-		<BookmarkProvider>
-			<nav className="navbar">
-				<div className="navbar-logo">
-					<img src={logo} className="logo" alt="logo" />
-				</div>
 
-				<div className="navbar-btns">
-					<button
-						className="saved-locations-btn nav-item"
-						href="#"
+    <BookmarkProvider>
+		<nav className="navbar">
+			<div className="navbar-logo">
+				<img src={logo} className="logo" alt="logo" />
+			</div>
+			<div className="navbar-btns">
+				<button className="saved-locations-btn nav-item"
+        href="#"
 						onClick={(e) => {
 							e.preventDefault();
-							toggleBookmarkModal();
+							toggleBookmarkModal();>
+              Saved Locations
+         </button>
+				<div className="toggle-btn nav-item">
+					<span>°C </span>
+					<Toggle
+						defaultChecked={changeUnit === 'imperial'}
+						icons={false}
+						onChange={(event) => {
+							event.target.checked ? setChangeUnit('imperial') : setChangeUnit('metric');
 						}}
 					>
 						Saved Locations
