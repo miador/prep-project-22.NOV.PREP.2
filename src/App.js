@@ -121,7 +121,6 @@ function App() {
 		);
 	} else {
 		return (
-
 			<BookmarkProvider>
 				<>
 					<Navbar />
@@ -174,50 +173,6 @@ function App() {
 					</main>
 				</>
 			</BookmarkProvider>
-=======
-			<>
-				<Navbar changeUnit={degree} setChangeUnit={setDegree} />
-				<main className="main-div">
-					<h2>Enter a city below 👇</h2>
-					<input
-						type="text"
-						value={city}
-						onChange={(e) => setCity(e.currentTarget.value)}
-						onKeyDown={() => handleKeyDown()}
-						onKeyUp={() => handleKeyUp()}
-					/>
-					<section id="mapAndWeathercard">
-						<MainWeatherCard data={cWeatherData} changeUnit={degree} />
-						<MapContainer setCWeatherUrl={setCWeatherUrl} setForecastUrl={setForecastUrl} coord={cWeatherData.coord} />
-					</section>
-
-					<section>
-						<DailyForecast
-							data={forecastDataGrouped}
-							setActiveWeatherCard={setActiveWeatherCard}
-							activeWeatherCard={activeWeatherCard}
-							changeUnit={degree}
-						/>
-					</section>
-					<section>
-						<HourlyForecast data={forecastDataGrouped[activeWeatherCard]} changeUnit={degree} />
-					</section>
-
-					<section>
-						<p className="required-things-heading">Things you should carry in your bag 🎒</p>
-						<Box itemType="things" weather={cWeatherData.weather[0].main} />
-					</section>
-					<section>
-						<p className="required-things-heading">Things you eat 😋</p>
-						<Box itemType="food" weather={cWeatherData.weather[0].main} />
-					</section>
-					<section>
-						<p className="required-things-heading">Songs to listen to 🎶</p>
-						<PlaylistRecommendation weather={cWeatherData.weather[0].main} />
-					</section>
-				</main>
-			</>
-
 		);
 	}
 }

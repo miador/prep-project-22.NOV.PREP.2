@@ -2,13 +2,9 @@ import React from 'react';
 import logo from '../../assets/img/logo.png';
 import Toggle from 'react-toggle';
 import '../../assets/css/Navbar.css';
-
 import { useBookmarkContext } from '../../helpers/context/bookmark';
 import { BookmarkProvider } from '../../helpers/context/bookmark';
-
-
-const Navbar = ({ changeUnit, setChangeUnit }) => {
-
+const Navbar = () => {
 	const hamburgerClicked = () => {
 		let hamburger = document.querySelector('.navbar-hamburger');
 		let navButtons = document.querySelector('.navbar-btns');
@@ -17,12 +13,12 @@ const Navbar = ({ changeUnit, setChangeUnit }) => {
 	};
 	const [, toggleBookmarkModal] = useBookmarkContext();
 	return (
-		<nav className="navbar">
-			<div className="navbar-logo">
-				<img src={logo} className="logo" alt="logo" />
-			</div>
+		<BookmarkProvider>
+			<nav className="navbar">
+				<div className="navbar-logo">
+					<img src={logo} className="logo" alt="logo" />
+				</div>
 
-			<BookmarkProvider>
 				<div className="navbar-btns">
 					<button
 						className="saved-locations-btn nav-item"
@@ -41,14 +37,15 @@ const Navbar = ({ changeUnit, setChangeUnit }) => {
 							<span> °F</span>
 						</label>
 					</div>
-			</BookmarkProvider>
+				</div>
 
-			<div className="navbar-hamburger" onClick={hamburgerClicked}>
-				<span class="bar"></span>
-				<span class="bar"></span>
-				<span class="bar"></span>
-			</div>
-		</nav>
+				<div className="navbar-hamburger" onClick={hamburgerClicked}>
+					<span class="bar"></span>
+					<span class="bar"></span>
+					<span class="bar"></span>
+				</div>
+			</nav>
+		</BookmarkProvider>
 	);
 };
 
