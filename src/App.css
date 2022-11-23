@@ -60,7 +60,12 @@ input {
 	background-size: cover;
 	opacity: 0.9;
 }
-
+.cloudy {
+	background-image: url('https://media2.giphy.com/media/3ohs4uJC1G9NNq03fi/giphy.gif?cid=ecf05e473xlsnrp5tnkllghlkc2p14r6n73th94f8vjq1o86&rid=giphy.gif&ct=g');
+	height: 108vh;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
 .snowy {
 	background-image: url('https://media1.giphy.com/media/rRmBOCZDJJGU0/giphy.gif?cid=ecf05e47116o724tfd60fodewt04e3cjbpmi6s5n9q9liefr&rid=giphy.gif&ct=g');
 	height: 108vh;
@@ -75,8 +80,8 @@ input {
 	background-repeat: no-repeat;
 	background-size: cover;
 	opacity: 0.9;
+	z-index: 1;
 }
-
 .haze {
 	background-image: url('https://images.unsplash.com/photo-1524252500348-1bb07b83f3be?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80');
 	height: 108vh;
@@ -91,4 +96,8 @@ input {
 	background-repeat: no-repeat;
 	background-size: cover;
 	opacity: 0.9;
+}
+
+h3 {
+	color: #133667;
 }
