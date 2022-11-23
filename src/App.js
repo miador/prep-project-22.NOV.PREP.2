@@ -14,9 +14,9 @@ import Footer from './components/Footer';
 function App() {
 	const [city, setCity] = useState('New York City');
 	const [weatherType, setWeatherType] = useState('');
-	const [isLoaded, setIsLoaded] = useState(false);
-	const [error, setError] = useState(null);
-	const [results, setResults] = useState(null);
+	const [, setIsLoaded] = useState(false);
+	const [, setError] = useState(null);
+	const [, setResults] = useState(null);
 	const [degree, setDegree] = useState('metric');
 
 	const [cWeatherUrl, setCWeatherUrl] = useState(
